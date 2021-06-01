@@ -1,0 +1,473 @@
+body{
+    background: #E9E9E9;
+}
+
+#virsraksts{
+    position: absolute;
+    width: 1265px;
+    height: 330px;
+    left: 550px;
+    top: 100px;
+
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 250px;
+    line-height: 350px;
+
+    color: #EDD711;
+
+    -webkit-text-stroke-width: 5px;
+    -webkit-text-stroke-color: black;
+    text-shadow: -13px 15px 6px rgba(0, 0, 0, 0.35);
+}
+
+#logo1{
+    position: absolute;
+    width: 250px;
+    height: 311px;
+    left: 860px;
+    top: 0px;
+}
+
+#viesnicasRedigesanaBackground {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+}
+
+#palmuKoki {
+    position: absolute;
+    width: 33%;
+    height: 100%;
+    right: 1px;
+    top: 1px;
+    border: 1px solid #FFFFFF;
+}
+
+#ananass {
+    position: absolute;
+    top: -10px;
+    width: 160px;
+    height: 200px;
+}
+
+#logo2 {
+    position: relative;
+    left: 48px;
+    top: 2px;
+}
+
+#img1 {
+    position: absolute;
+    width: 1470px;
+    height: 873px;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 4px;
+}
+
+#img2 {
+    position: absolute;
+    width: 1620px;
+    height: 930px;
+    left: 300px;
+    top: 39px;
+    box-sizing: border-box;
+}
+
+.button{
+    position: absolute;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 64px;
+    color: #EDD711;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    border: 3px solid #000000;
+    background: #B5984F;
+    box-shadow: -8px 11px 4px rgba(0, 0, 0, 0.35), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+}
+
+#Pop_up1{
+    display: none;
+}
+
+#Pop_up2{
+    display: none;
+}
+
+.Pop_up {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 30px;
+}
+
+.Forms {
+    position:absolute;
+    top: 180px;
+    left: 500px;
+    width: 500px;
+    height: 600px;
+    text-align: center;
+    background-color: rgb(225, 225, 228);
+    padding: 20px;
+    border: 1px solid black;
+    width: 946px
+}
+
+.box{
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    position: absolute;
+    width: 378px;
+    height: 61px;
+}
+
+h4 {
+    position: absolute;
+    width: 69px;
+    height: 24px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.button_PopUp {
+    position: absolute;
+    width: 160px;
+    height: 40px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 24px;
+    color: #EDD711;
+    background: #B5984F;
+    border: 3px solid #000000;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    box-shadow: -8px 11px 4px rgba(0, 0, 0, 0.35), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+}
+
+.Pop_up_Virsraksts{
+    position: absolute;
+    width: 362px;
+    height: 90px;
+    font-weight: bolder;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 70px;
+    line-height: 70px;  
+    color: #EDD711;
+    -webkit-text-stroke-width: 2.5px;
+    -webkit-text-stroke-color: black;
+}
+
+#tristūris1 {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    left: 787px;
+    top: 0px;
+}
+
+#tristūris2 {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    right: 787px;
+    bottom: 0px;
+}
+
+#rezervacijaVirsraksts {
+    position: absolute;
+    width: 457px;
+    height: 77px;
+    left: 48px;
+    top: 150px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 64px;
+}
+
+#valsts {
+    position: absolute;
+    width: 275px;
+    height: 40px;
+    left: 38px;
+    top: 331px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#zvaigznes {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 325px;
+    top: 331px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#vardaIevade {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 450px;
+    top: 331px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#uzvardaIevade {
+    position: absolute;
+    width: 250px;
+    height: 40px;
+    left: 725px;
+    top: 331px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#viesnica {
+    position: absolute;
+    width: 650px;
+    height: 40px;
+    left: 38px;
+    top: 400px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#numurins {
+    position: absolute;
+    width: 225px;
+    height: 40px;
+    left: 750px;
+    top: 400px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#datumsNo {
+    position: absolute;
+    height: 40px;
+    left: 37px;
+    top: 475px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#gadsNo {
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    left: 210px;
+    top: 500px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#menesisNo {
+    position: absolute;
+    width: 190px;
+    height: 40px;
+    left: 320px;
+    top: 500px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#dienaNo {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 540px;
+    top: 500px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#datumsLidz {
+    position: absolute;
+    height: 40px;
+    left: 37px;
+    top: 550px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#gadsLidz {
+    position: absolute;
+    width: 90px;
+    height: 40px;
+    left: 210px;
+    top: 575px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#menesisLidz {
+    position: absolute;
+    width: 190px;
+    height: 40px;
+    left: 320px;
+    top: 575px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#dienaLidz {
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    left: 540px;
+    top: 575px;
+    background: #FFFFFF;
+    border: 1px solid #7E7E7E;
+    box-sizing: border-box;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    line-height: 32px;
+}
+
+#pogaRezervet {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: 37px;
+    top: 650px;
+    background: #B5984F;
+    border: 3px solid #000000;
+    box-shadow: -8px 11px 4px rgba(0, 0, 0, 0.35), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    color:#EDD711;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 45px;
+    line-height: 45px;
+}
+
+#cena {
+    position: absolute;
+    left: 500px;
+    top: 600px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 48px;
+    color: #000000;
+}
+
+#RediģēšanasVirsraksts {
+    position: absolute;
+    width: 498px;
+    height: 77px;
+    left: 25px;
+    top: 170px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 64px;
+    color: #000000;
+}
