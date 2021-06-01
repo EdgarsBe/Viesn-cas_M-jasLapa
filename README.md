@@ -1,0 +1,1 @@
+#Mājaslapa Viesnīcas
