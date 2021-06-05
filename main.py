@@ -23,5 +23,9 @@ def Rezervet():
 def Rediget():
   return render_template("Admin_Viesnīcu_Rediģēšana.html")
 
+@app.route('/Veiktas-Rezervacijas')
+def VeiktasRezervacijas():
+  return render_template("veikto_rezervaciju_lapa.html")
+
 
 app.run(host='0.0.0.0', port=8080)
