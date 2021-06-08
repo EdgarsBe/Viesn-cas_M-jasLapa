@@ -6,7 +6,6 @@ app = Flask('app')
 def Homepage():
   return render_template("Homepage.html")
 
-
 @app.route('/Logged-In')
 def LoggedInPage():
   return render_template("Ielogojies_Lapa.html")

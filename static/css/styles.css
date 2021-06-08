@@ -38,12 +38,12 @@ body{
 }
 
 #palmuKoki {
-    position: absolute;
+    position: fixed;
     width: 33%;
+    top: 0px;
     height: 100%;
     right: 1px;
-    top: 1px;
-    border: 1px solid #FFFFFF;
+    border-left: 5px solid #FFFFFF;
 }
 
 #ananass {
@@ -92,6 +92,21 @@ body{
     background: #B5984F;
     box-shadow: -8px 11px 4px rgba(0, 0, 0, 0.35), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 23px;
+    box-sizing: border-box;
+    cursor:pointer;
+    display:inline-block;
+    text-align: center;
+}
+.button:hover {
+	background:#dfbe6a;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(61, 61, 61);
+}
+.button:active {
+	position:absolute;
+    background: #B5984F;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
 }
 
 .button2 {
@@ -779,4 +794,107 @@ th {
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
     background-color: #C8C8C8;
+}
+
+#RediģēšanasVirsraksts {
+    position: absolute;
+    width: 498px;
+    height: 77px;
+    left: 25px;
+    top: 170px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 64px;
+    color: #000000;
+}
+#PievienotViesn{
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 48px;
+    color: #EDD711;
+    border: 3px solid #000000;
+    background: #B5984F;
+    box-shadow: -8px 11px 4px rgba(0, 0, 0, 0.35), inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 23px;
+}
+
+#Vies_Saraksts{
+    float: left;
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    top: 350px;
+    left: 30px;
+    width: 1230px;
+    height: 400px;
+}
+#Valsts_Saraksts{
+    clear: left;
+    position: relative;
+    top: 350px;
+    left: 40px;
+    width: 1235px;
+    height: 400px;
+}
+
+.ViesnīcasKaste {
+    background: #C8C8C8;
+    border: 5px solid #FFFFFF;
+    box-shadow: -13px 9px 9px -3px rgba(0, 0, 0, 0.25);
+    width: 1185px;
+    height: 91px;
+    margin: 20px;
+}
+.smol_button{
+    margin: 5px;
+    float: right;
+    width: 73px;
+    height: 36px;
+    background: #B5984F;
+    border: 3px solid #000000;
+    box-sizing: border-box;
+    box-shadow: -8px 8px 7px -2px rgba(0, 0, 0, 0.35);
+    border-radius: 23px;
+    font-weight: 900;
+    cursor:pointer;
+    display:inline-block;
+    text-align: center;
+    color: black;
+}
+.smol_button:hover {
+	background-color:#dfbe6a;
+}
+.smol_button:active {
+	width: 70px;
+    height: 33px;
+}
+h3{
+    width: 40px;
+    height: 24px;
+    font-family: ZCOOL QingKe HuangYou;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 40px;
+    color: #000000;
+}
+#Valsts_nr{
+    position: absolute;
+    width: 900px;
+    top: 0px;
+    left: 300px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.Valsts{
+    position: relative;
+    margin-left: 50px;
+    float: inline-end;
+    margin-right: 50px;
+    align-content: center;
 }
