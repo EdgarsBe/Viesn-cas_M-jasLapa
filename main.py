@@ -27,5 +27,17 @@ def Rediget():
 def VeiktasRezervacijas():
   return render_template("veikto_rezervaciju_lapa.html")
 
+@app.route('/tabula')
+def VeiktasRezervacijas():
+  return render_template("tabula.html")
+
+@app.route('/Admin-Statistikas-Lapa')
+def VeiktasRezervacijas():
+  return render_template("Admin_Statistikas_Lapa.html")
+
+@app.route('/')
+def VeiktasRezervacijas():
+  return render_template("veikto_rezervaciju_lapa.html")
+
 
 app.run(host='0.0.0.0', port=8080)
