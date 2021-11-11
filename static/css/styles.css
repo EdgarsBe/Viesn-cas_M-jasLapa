@@ -1,6 +1,6 @@
 body{
     background: #E9E9E9;
-    background-image: url('static/img/File_1.png');
+    background-image: url('../static/img/File_1.png');
     overflow: hidden;
 }
 
