@@ -1,5 +1,7 @@
 body{
     background: #E9E9E9;
+    background-image: url('static/img/File_1.png');
+    overflow: hidden;
 }
 
 #virsraksts{
@@ -57,25 +59,6 @@ body{
     position: relative;
     left: 48px;
     top: 2px;
-}
-
-#img1 {
-    position: absolute;
-    width: 1200px;
-    height: 873px;
-    left: 0px;
-    top: 0px;
-    box-sizing: border-box;
-    box-shadow: inset 0px 4px 4px;
-}
-
-#img2 {
-    position: absolute;
-    width: 1620px;
-    height: 930px;
-    left: 290px;
-    top: 39px;
-    box-sizing: border-box;
 }
 
 .button{
