@@ -61,7 +61,7 @@ body{
 
 #img1 {
     position: absolute;
-    width: 1470px;
+    width: 1200px;
     height: 873px;
     left: 0px;
     top: 0px;
@@ -73,7 +73,7 @@ body{
     position: absolute;
     width: 1620px;
     height: 930px;
-    left: 300px;
+    left: 290px;
     top: 39px;
     box-sizing: border-box;
 }
