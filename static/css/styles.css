@@ -6,7 +6,8 @@ body{
 
 @font-face{
   font-family: Font;
-  src: url(ostrichsans-bold.otf);
+  src: url("/fonts/ostrichsans-bold-webfont.woff2") format("woff2"),
+       url("/fonts/ostrichsans-bold-webfont.woff") format("woff");
 }
 
 
