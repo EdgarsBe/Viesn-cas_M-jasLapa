@@ -4,6 +4,12 @@ body{
     overflow: hidden;
 }
 
+@font-face{
+  font-family: Font;
+  src: url(OstrichSans-Bold.otf);
+}
+
+
 #virsraksts{
     position: absolute;
     width: 1265px;
@@ -11,7 +17,7 @@ body{
     left: 550px;
     top: 100px;
 
-    font-family: ZCOOL QingKe HuangYou;
+    font-family: Font;
     font-style: normal;
     font-weight: normal;
     font-size: 250px;
