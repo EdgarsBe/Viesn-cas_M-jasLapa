@@ -1,23 +1,16 @@
-const POP_UP1 = document.getElementById('Pop_up1');
-const POP_UP2 = document.getElementById('Pop_up2');
+const POP_UP1 = document.getElementById('Pieslēgšanās_logs');
+const POP_UP2 = document.getElementById('Registresanas_logs');
 
-document.getElementById('button2').addEventListener('click', () => {
+document.getElementById('Pieslegšanās').addEventListener('click', () => {
     POP_UP1.style.display = 'block';
 })
-document.getElementById('IeietPoga').addEventListener('click', () => {
-    POP_UP1.style.display = 'none'
-})
-document.getElementById('ReģPoga1').addEventListener('click', () => {
+document.getElementById('PiesledzPoga').addEventListener('click', () => {
     POP_UP1.style.display = 'none'
 })
 
-document.getElementById('button3').addEventListener('click', () => {
+document.getElementById('Regist').addEventListener('click', () => {
     POP_UP2.style.display = 'block';
 })
-document.getElementById('ReģPoga2').addEventListener('click', () => {
+document.getElementById('RegPoga').addEventListener('click', () => {
     POP_UP2.style.display = 'none'
 })
-
-function Redirect_Rezerve() {
-  location.replace("https://flasktemplatervt.dp1eberzins.repl.co/Rezerv%C4%93%C5%A1ana")
-}

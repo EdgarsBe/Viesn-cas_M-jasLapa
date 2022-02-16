@@ -1,4 +1,4 @@
-# Mājaslapa Viesnīcas
+w# Mājaslapa Viesnīcas
 
 Projekta nosaukums: Viesnīca
 

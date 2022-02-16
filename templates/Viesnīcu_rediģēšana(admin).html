@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/Homepage.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body class="Palmu_lapa">
+  <header>
+    <img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png">
+    <h3>Viesnicu redigesana</h3>
+  </header>
+{% block title %}
+<p>404</p>
+{% endblock %}
+</body>
+<script src="..static/js/Homepage.JS"></script>
+</html>
