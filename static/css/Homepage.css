@@ -154,3 +154,16 @@ header {
     color: lightgray;
     opacity: 1;
 }
+
+.table_units {
+    background-color: gray;
+    border: 1px white;
+    text-align: center;
+    position: absolute;
+    display: block;
+}
+
+td {
+  text-align: center
+}
+

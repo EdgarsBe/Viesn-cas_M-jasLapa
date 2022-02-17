@@ -1,41 +1,55 @@
-{% block head %}
-<title>Valstis</title>
-{% endblock %}
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+  <body class="Palmu_lapa">
+    <img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png">
+    <h3>Viesnicu redigesana</h3>
+    {% block head %}
+    <title>Valstis</title>
+    {% endblock %}
 
-{% block body %}
-<div class="content">
-    <h1 style="text-align: center">Valstis</h1>
-    {% if tasks|length < 1 %}
-    <h4 style="text-align: center">Nav nevienas valstis pievienotas! Pievienojiet zemāk.</h4>
-    {% else %}
-    <table>
-        <tr>
-            <th>Valsts</th>
-            <th>Saīsinājums</th>
-            <th>Viesnīcu skaits</th>
-            <th>Darbības</th>
-        </tr>
-        {% for task in tasks %}
-            <tr>
-              <td>{{ task.valsts }}</td>
-              <td>{{ task.saisinajums }}</td>
-              <td>{{ task.viesnic_sk }}</td>
-                <a href="/delete/{{Valsts.id}}">Delete</a>
-                  <br>
-                <a href="/update/{{Valsts.id}}">Update</a>
-              </td>
-            </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
+    {% block body %}
+    <div class="content">
+        {% if tasks|length < 1 %}
+        <h4 style="text-align: left">Nav nevienas valstis pievienotas! Pievienojiet zemāk.</h4>
+        {% else %}
+        <div class="table_units">
+            <table>
+                <tr>
+                    <th>Valsts</th>
+                    <th>Saīsinājums</th>
+                    <th>Viesnīcu skaits</th>
+                    <th>Darbības</th>
+                </tr>
+                {% for task in tasks %}
+                    <tr>
+                      <td>{{ task.valsts }}</td>
+                      <td>{{ task.saisinajums }}</td>
+                      <td>{{ task.viesnic_sk }}</td>
+                      <td>
+                        <a href="/izdzest_Valsts/{{task.id}}">Delete</a>
+                          <br>
+                        <a href="/Admin-Rediģēšana/Valstis/update/{{task.id}}"><input type="submit">Update</input></a>
+                      </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
 
-    <div class="form">
-        <form action="/" method="POST">
-            <input type="text" name="valsts" id="valsts">
-            <input type="text" name="saisinajums" id="saisinajums">
-            <input type="text" name="viesnic_sk" id="viesnic_sk">
-            <input type="submit" value="Pievienot">
-        </form>
+        <div class="form">
+            <form action="/Admin-Rediģēšana/Valstis" method="POST" class="Admin_form">
+                <input class="input" type="text" name="valsts" id="valsts">
+                <input class="input" type="text" name="saisinajums" id="saisinajums">
+                <input class="input" type="text" name="viesnic_sk" id="viesnic_sk">
+                <input class="input" type="submit" value="Pievienot">
+            </form>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
+  </body>

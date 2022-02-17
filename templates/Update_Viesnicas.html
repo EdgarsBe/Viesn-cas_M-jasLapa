@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+
+<body>
+    <div class="form">
+        <form aaction="{{ url_for('update', id = task.id) }}" method="POST">
+            <select class="input" name="valsts_iz" method="POST">
+              {% for valsts in valstis %}
+               <option value="{{valsts.valsts }}">{{ valsts.valsts }}</option>
+              {% endfor %} 
+            </select>
+            <input class="input" type="text" name="nosaukums" id="Viesnica" value="{{ task.nosaukums }}">
+            <input class="input" type="text" name="zvaigznes" id="Zvaigžņu_skaits" value="{{ task.zvaigznes }}">
+            <input class="input" type="text" name="numurini" id="Numuriņu_skaits" value="{{ task.numurini }}">
+            <input class="input" type="text" name="cena" id="Numuriņu_cena" value="{{ task.cena }}">
+            <input class="input" type="submit" value="Pievienot">
+        </form>
+    </div>
+</body>
+</html>

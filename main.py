@@ -11,26 +11,22 @@ db = SQLAlchemy(app)
 class Valstis(db.Model):
   id = db.Column(db.Integer, primary_key=True)
   valsts = db.Column(db.String(60), nullable=False)
-  saisinajums = db.Column(db.String(10))
-  viesnic_sk = db.Column(db.Integer)
-  #children = db.relationship("Viesnicas", cascade="all, delete")
+  saisinajums = db.Column(db.String(10), nullable=False)
+  viesnic_sk = db.Column(db.Integer, nullable=False)
   
   def __repr__(self):
       return 'Task %r' % self.id
-'''
+
 class Viesnicas(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  #valsts_id = db.Column(db.Integer, db.ForeignKey("valsts.id"))
-  nosaukums = db.Column(db.String(60))
-  zvaigznes = db.Column(db.String(5))
-  numurini = db.Column(db.Integer)
-  cena = db.Column(db.Float)
+  valsts_iz = db.Column(db.String(200), nullable=False)
+  nosaukums = db.Column(db.String(60), nullable=False)
+  zvaigznes = db.Column(db.String(5), nullable=False)
+  numurini = db.Column(db.Integer, nullable=False)
+  cena = db.Column(db.Float, nullable=False)
+
   def __repr__(self):
-    return f'<from valsts {self.valsts_id}>'
-
-  def valsts_id_ieguve(self):
-    return Valstis.query.filter(Valstis.id == self.valsts_id).first()'''
-
+      return 'Viesnic %r' % self.id
 
 @app.route('/')
 def Homepage():
@@ -64,10 +60,60 @@ def Statistika():
 def Rediget():
   return render_template("Viesnīcu_rediģēšana(admin).html")
 
-@app.route('/Admin-Rediģēšana/Valstis')
+#Admin Viesnīcu Reiģēšanas Lapas Funkcijas un DB.
+
+@app.route('/Admin-Rediģēšana/Viesnicas', methods=['POST', 'GET'])
+def Viesnicas_func():
+  if request.method == 'POST':
+    jauna_viesnica = Viesnicas(valsts_iz=request.form['valsts_iz'], nosaukums=request.form['nosaukums'],zvaigznes=request.form['zvaigznes'], numurini=request.form['numurini'], cena=request.form['cena'])
+    try:
+        db.session.add(jauna_viesnica)
+        db.session.commit()
+        return redirect('/Admin-Rediģēšana/Viesnicas')
+    except:
+        return 'Kļūda pievienojot Viesnicu!'
+  else:
+    valstis = Valstis.query.order_by(Valstis.id).all()
+    tasks = Viesnicas.query.order_by(Viesnicas.id).all()
+    return render_template('Viesnicu_tabula.html', valstis=valstis, tasks = tasks)
+
+@app.route('/izdzest_Viesnicas/<int:id>')
+def Viesnicas_izdzest(id):
+    task_to_delete = Viesnicas.query.get_or_404(id)
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/Admin-Rediģēšana/Viesnicas')
+    except:
+        return 'nesanāca izdzēst'  
+
+@app.route('/Admin-Rediģēšana/Viesnicas/update/<int:id>', methods=['GET', 'POST'])
+def Update_Viesnicas(id):
+    task = Viesnicas.query.get_or_404(id)
+    if request.method == 'POST':
+        task.valsts_iz = request.form['valsts_iz']
+        task.nosaukums = request.form['nosaukums']
+        task.zvaigznes = request.form['zvaigznes']
+        task.numurini = request.form['numurini']
+        task.cena = request.form['cena']
+        try:
+            db.session.commit()
+            return redirect('/Admin-Rediģēšana/Viesnicas')
+        except:
+            return "Kļūda veicot labojumu!"
+    else:
+        valstis = Valstis.query.order_by(Valstis.id).all()
+        return render_template("Update_Viesnicas.html", task=task, valstis=valstis)
+
+#Admin Valsts Reiģēšanas Lapas Funkcijas un DB.
+
+@app.route('/Admin-Rediģēšana/Valstis', methods=['POST', 'GET'])
 def Valstis_func():
     if request.method == 'POST':
-      jauna_valsts = Valstis(valsts=request.form['valsts'],saisinajums=request.form['saisinajums'],viesnic_sk=request.form['viesnic_sk'],)
+      jauna_valsts = Valstis(
+      valsts=request.form['valsts'],
+      saisinajums=request.form['saisinajums'],
+      viesnic_sk=request.form['viesnic_sk'])
       
       try:
         db.session.add(jauna_valsts)
@@ -77,7 +123,34 @@ def Valstis_func():
         return 'Kļūda pievienojot Valsti!'
 
     else:
-      valstis = Valstis.query.order_by(Valstis.id).all()
-      return render_template('Valsts_tabula.html', valstis=valstis)
+      tasks = Valstis.query.order_by(Valstis.id).all()
+      return render_template('Valsts_tabula.html', tasks=tasks)
 
-app.run(host='0.0.0.0', port=8080)
+@app.route('/izdzest_Valsts/<int:id>')
+def Valsts_izdzest(id):
+    task_to_delete = Valstis.query.get_or_404(id)
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/Admin-Rediģēšana/Valstis')
+    except:
+        return 'Nesanāca izdzēst!'      
+
+@app.route('/Admin-Rediģēšana/Valstis/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    task = Valstis.query.get_or_404(id)
+    if request.method == 'POST':
+        task.valsts = request.form['valsts']
+        task.saisinajums = request.form['saisinajums']
+        task.viesnic_sk = request.form['viesnic_sk']
+        try:
+            db.session.commit()
+            return redirect('/Admin-Rediģēšana/Valstis')
+        except:
+            return "Kļūda veicot labojumu!"
+    else:
+        return render_template("Update_Valsts.html", task=task)
+
+
+if __name__ == "__main__": 
+  app.run(host='0.0.0.0', port=8000)

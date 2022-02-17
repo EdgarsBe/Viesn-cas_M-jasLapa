@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="lv">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  </head>
+
+<body>
+    <div class="form">
+        <form action="{{ url_for('update', id = task.id) }}" method="POST">
+            <input class="input" type="text" name="valsts" id="valsts" value ="{{task.valsts}}">
+            <input class="input" type="text" name="saisinajums" id="saisinajums" value="{{task.saisinajums}}">
+            <input class="input" type="text" name="viesnic_sk" id="viesnic_sk" value ="{{task.viesnic_sk}}">
+            <input class="input" type="submit" value="Update">
+        </form>
+    </div>
+</body>
+</html>
+
