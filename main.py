@@ -28,6 +28,17 @@ class Viesnicas(db.Model):
   def __repr__(self):
       return 'Viesnic %r' % self.id
 
+class Rezervacijas(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  valsts = db.Column(db.String(60), nullable=False)
+  nosaukums = db.Column(db.String(60), nullable=False)
+  zvaigznes = db.Column(db.String(5), nullable=False)
+  DatumsNo = db.Column(db.String(200), nullable=False)
+  DatumsLidz = db.Column(db.String(200), nullable=False)
+
+  def __repr__(self):
+      return 'Rezervacij %r' % self.id
+
 @app.route('/')
 def Homepage():
   return render_template("Homepage.html")
@@ -58,7 +69,27 @@ def Statistika():
 
 @app.route('/Admin-Rediģēšana')
 def Rediget():
-  return render_template("Viesnīcu_rediģēšana(admin).html")
+  return render_template("Rediģēšana(admin).html")
+
+#Rezervācijas klientu pusē.
+
+@app.route('/Veiktas-Rezervacijas', methods=['POST', 'GET'])
+def Rezervacij_func():
+  if request.method == 'POST':
+    jauna_rezervacija = Rezervacijas(valsts=request.form['valsts'],
+    nosaukums=request.form['nosaukums'], zvaigznes=request.form['zvaigznes'], DatumsNo=request.form['DatumsNo'], DatumsLidz=request.form['DatumsLidz'],)
+    try:
+        db.session.add(jauna_rezervacija)
+        db.session.commit()
+        return redirect('/Veiktas-Rezervacijas') 
+    except:
+        return 'Kļūda!'
+  else:
+    valstis = Valstis.query.order_by(Valstis.id).all()
+    viesnicas = Viesnicas.query.order_by(Viesnicas.id).all()
+    rezervacijas = Rezervacijas.query.order_by(Rezervacijas.id).all()
+    return render_template('Rezervācijas_veikšana.html', valstis=valstis, viesnicas=viesnicas, rezervacijas=rezervacijas)
+
 
 #Admin Viesnīcu Reiģēšanas Lapas Funkcijas un DB.
 

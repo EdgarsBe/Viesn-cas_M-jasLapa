@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
   <body class="Palmu_lapa">
-    <img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png">
-    <h3>Viesnicu redigesana</h3>
+    <a href="/Admin-Rediģēšana"><img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png"></a>
+    <h3 class="Form_aizpilde">Viesnicu redigesana</h3>
     {% block head %}
     <title>Valstis</title>
     {% endblock %}
-
+    
     {% block body %}
     <div class="content">
         {% if tasks|length < 1 %}
@@ -21,33 +21,35 @@
         <div class="table_units">
             <table>
                 <tr>
-                    <th>Valsts</th>
-                    <th>Saīsinājums</th>
-                    <th>Viesnīcu skaits</th>
-                    <th>Darbības</th>
+                    <th class="teksts">Valsts</th>
+                    <th class="teksts">Saīsinājums</th>
+                    <th class="teksts">Viesnīcu skaits</th>
+                    <th class="teksts">Darbības</th>
                 </tr>
                 {% for task in tasks %}
+                  <div>
                     <tr>
-                      <td>{{ task.valsts }}</td>
-                      <td>{{ task.saisinajums }}</td>
-                      <td>{{ task.viesnic_sk }}</td>
-                      <td>
-                        <a href="/izdzest_Valsts/{{task.id}}">Delete</a>
-                          <br>
-                        <a href="/Admin-Rediģēšana/Valstis/update/{{task.id}}"><input type="submit">Update</input></a>
-                      </td>
+                        <td>{{ task.valsts }}</td>
+                        <td>{{ task.saisinajums }}</td>
+                        <td>{{ task.viesnic_sk }}</td>
+                        <td>
+                          <a href="/izdzest_Valsts/{{task.id}}"><input style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" class="Pogas" type="submit" value="Delete"></input></a>
+                            <br>
+                          <a href="/Admin-Rediģēšana/Valstis/update/{{task.id}}"><input style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" class="Pogas" type="submit" value="Update"></input></a>
+                       </td>
                     </tr>
+                  </div>
                 {% endfor %}
             </table>
         </div>
         {% endif %}
 
-        <div class="form">
+        <div class="form_top">
             <form action="/Admin-Rediģēšana/Valstis" method="POST" class="Admin_form">
-                <input class="input" type="text" name="valsts" id="valsts">
-                <input class="input" type="text" name="saisinajums" id="saisinajums">
-                <input class="input" type="text" name="viesnic_sk" id="viesnic_sk">
-                <input class="input" type="submit" value="Pievienot">
+                <input class="input" type="text" placeholder="Valsts" name="valsts" id="valsts" required>
+                <input class="input" type="text" placeholder="Saīsinājums" name="saisinajums" id="saisinajums" required>
+                <input class="input" type="text" placeholder="Viesnīcu skaits" name="viesnic_sk" id="viesnic_sk" required>
+                <input class="Pogas" style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" type="submit" value="Pievienot">
             </form>
         </div>
     </div>

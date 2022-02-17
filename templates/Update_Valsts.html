@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
 
-<body>
-    <div class="form">
-        <form action="{{ url_for('update', id = task.id) }}" method="POST">
-            <input class="input" type="text" name="valsts" id="valsts" value ="{{task.valsts}}">
-            <input class="input" type="text" name="saisinajums" id="saisinajums" value="{{task.saisinajums}}">
-            <input class="input" type="text" name="viesnic_sk" id="viesnic_sk" value ="{{task.viesnic_sk}}">
-            <input class="input" type="submit" value="Update">
+<body class="Palmu_lapa">
+  <h3 class="Form_aizpilde">Labot ievadito <valsti></valsti>!</h3>
+    <div class="form_top">
+        <form class="admin_form" action="{{ url_for('update', id = task.id) }}" method="POST">
+            <input class="input" type="text" name="valsts" id="valsts" value ="{{task.valsts}}" required>
+            <input class="input" type="text" name="saisinajums" id="saisinajums" value="{{task.saisinajums}}" required>
+            <input class="input" type="text" name="viesnic_sk" id="viesnic_sk" value ="{{task.viesnic_sk}}" required>
+            <input class="Pogas" style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" type="submit" value="Update">
         </form>
     </div>
 </body>

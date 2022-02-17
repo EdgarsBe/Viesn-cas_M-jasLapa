@@ -12,8 +12,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body class="Palmu_lapa">
-    <img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png">
+    <a href="/Logged-In"><img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png"></a>
     <h3>Veikt Rezervaciju</h3>
+    
+    {% block body %}
+    <div class="content">
+        <div class="form_top">
+            <form action="/Veiktas-Rezervacijas" method="POST" class="Admin_form">
+                <input class="input" type="text" placeholder="Vards" name="Vards" id="Vards" required>
+                <input class="input" type="text" placeholder="Uzvards" name="Uzvards" id="Uzvards" required>
+                <select method="POST">
+                  {% for valsts in valstis %}
+                    {% for viesnica in viesnicas %}
+                      {% if viesnica.id == valsts.viesnicaId %}
+                        <option value="{{viesnica.id}}">{{ valsts.valsts }}, {{ viesnica.nosaukums }}, {{ viesnica.zvaigznes }}</option>
+                      {% endif %}
+                    {% endfor %}
+                  {% endfor %}
+                </select>
+                <input class="Pogas" style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" type="submit" value="Pievienot">
+            </form>
+        </div>
+    </div>
+    {% endblock %}
 </body>
+
 <script src="..static/js/Homepage.JS"></script>
 </html>

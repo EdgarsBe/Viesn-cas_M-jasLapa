@@ -19,8 +19,12 @@
         <div class="Pogu_containers">
             <button id="Pieslegšanās" class="Pogas">Ieiet</button>
         </div>
-        <div>
+        <div class="Pogu_containers">
             <button id="Regist" class="Pogas">Reģistrēties</button>
+        </div>
+        <div>
+            <a href="/Logged-In"><button class="Pogas"> Ielogojies </button></a>
+            <a href="/Admin-Page"><button class="Pogas"> Admin </button></a>
         </div>
     </div>
     
@@ -32,15 +36,15 @@
                 <form class="Form">
                     <div class="input_field">
                         <p class="ievades_nosaukums">Lietotājvārds</p>
-                        <input class="input_field_text" type="text" placeholder="Lietotājvārds">
+                        <input class="input_field_text" type="text" placeholder="Lietotājvārds" required>
                     </div>
                     <div class="input_field">
                         <p class="ievades_nosaukums">E-pasts</p>
-                        <input class="input_field_text" type="text" placeholder="E-pasts">
+                        <input class="input_field_text" type="text" placeholder="E-pasts" required>
                     </div>
                     <div class="input_field">
                         <p class="ievades_nosaukums">Parole</p>
-                        <input class="input_field_text" type="password" placeholder="Parole">
+                        <input class="input_field_text" type="password" placeholder="Parole" required>
                     </div>
                     <input id="RegPoga" class="Pogas" style="font-size: 35px; line-height: 30px;" type="submit" value="Reģistrēties">
                     <p>Esat jau reģistrējušies? <a href="#">Pieslēdzieties tagad!</a></p>
@@ -57,18 +61,18 @@
                 <form class="Form">
                     <div class="input_field">
                         <p class="ievades_nosaukums">Lietotājvārds</p>
-                        <input class="input_field_text" type="text" placeholder="Lietotājvārds">
+                        <input class="input_field_text" type="text" placeholder="Lietotājvārds" required>
                     </div>
                     <div class="input_field">
                         <p class="ievades_nosaukums">Parole</p>
-                        <input class="input_field_text" type="password" placeholder="Parole">
+                        <input class="input_field_text" type="password" placeholder="Parole" required>
                     </div>
-                    <input id="PiesledzPoga" class="Pogas" style="font-size: 35px; line-height: 30px;" type="submit" value="Pieslēgties">
+                    <a href="/Logged-In"><input id="PiesledzPoga" class="Pogas" style="font-size: 35px; line-height: 30px;" type="submit" value="Pieslēgties"></input></a>
                     <p>Nav vel konta jums? <a href="#">Reģistrējaties tagad!</a></p>
                 </form>
             </div>
         </div>
     </div>
 </body>
-<script src="..static/js/Homepage.JS"></script>
+<script src="../static/js/Homepage.js"></script>
 </html>

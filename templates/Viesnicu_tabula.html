@@ -6,59 +6,65 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   </head>
+<body class="Palmu_lapa">
+    <a href="/Admin-Rediģēšana"><img class="Logo_sturis" src="../static/img/Mājaslapas_logo.png"></a>
+    <h3 class="Form_aizpilde">Viesnicu redigesana</h3>
+    {% block head %}
+    <title>Viesnīcas</title>
+    {% endblock %}
 
-{% block head %}
-<title>Viesnīcas</title>
-{% endblock %}
-
-{% block body %}
-<div class="content">
-    <h1 style="text-align: center">Viesnīcas</h1>
-    {% if tasks|length < 1 %}
-    <h4 style="text-align: center">Nav nevienas viesnīcas pievienotas! Pievienojiet zemāk.</h4>
-    {% else %}
-    <table>
-        <tr>
-            <th>Valsts</th>
-            <th>Viesnica</th>
-            <th>Zvaigžņu skaits</th>
-            <th>Numuriņu skaits</th>
-            <th>Numuriņu cena</th>
-        </tr>
-        {% for task in tasks %}
-            <tr>
-              <td>{{ task.valsts_iz }}</td>
-              <td>{{ task.nosaukums }}</td>
-              <td>{{ task.zvaigznes }}</td>
-              <td>{{ task.numurini }}</td>
-              <td>{{ task.cena }}</td>
-                <a href="/izdzest_Viesnicas/{{task.id}}"><input type="submit" value="Delete"></input></a>
-                  <br>
-                <a href="/Admin-Rediģēšana/Viesnicas/update/{{task.id}}"><input type="submit" value="Update"></input></a>
-              </td>
-            </tr>
-        {% endfor %}
-    </table>
-    {% endif %}
-    <div class="form">
-        <form action="/Admin-Rediģēšana/Viesnicas" method="POST">
-            <select class="input" name="valsts_iz" method="POST">
-              {% for valsts in valstis %}
-               <option value="{{valsts.valsts}}">{{ valsts.valsts }}</option>
-              {% endfor %} 
-            </select>
-            <input class="input" type="text" name="nosaukums" id="Viesnica">
-            <select class="input" name="zvaigznes" method="POST">
-              <option>*</option>
-              <option>**</option>
-              <option>***</option>
-              <option>****</option>
-              <option>*****</option>
-            </select>
-            <input class="input" type="text" name="numurini" id="Numuriņu_skaits">
-            <input class="input" type="text" name="cena" id="Numuriņu_cena">
-            <input class="input" type="submit" value="Pievienot">
-        </form>
+    {% block body %}
+    <div class="content">
+        {% if tasks|length < 1 %}
+        <h4 style="text-align: left; left:50px">Nav nevienas viesnīcas pievienotas! Pievienojiet zemāk.</h4>
+        {% else %}
+        <div style="width:900px" class="table_units">
+            <table>
+                <tr>
+                    <th class="teksts">Valsts</th>
+                    <th class="teksts">Viesnica</th>
+                    <th class="teksts">Zvaigžņu skaits</th>
+                    <th class="teksts">Numuriņu skaits</th>
+                    <th class="teksts">Numuriņu cena</th>
+                    <th class="teksts">Darbības</th>
+                </tr>
+                {% for task in tasks %}
+                    <tr>
+                      <td>{{ task.valsts_iz }}</td>
+                      <td>{{ task.nosaukums }}</td>
+                      <td>{{ task.zvaigznes }}</td>
+                      <td>{{ task.numurini }}</td>
+                      <td>{{ task.cena }}</td>
+                      <td>
+                        <a href="/izdzest_Viesnicas/{{task.id}}"><input style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" class="Pogas" type="submit" value="Delete"></input></a>
+                          <br>
+                        <a href="/Admin-Rediģēšana/Viesnicas/update/{{task.id}}"><input style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" class="Pogas" type="submit" value="Update"></input></a>
+                      </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {% endif %}
+        <div class="form_top">
+            <form action="/Admin-Rediģēšana/Viesnicas" class="admin_form" method="POST">
+                <select class="input" name="valsts_iz" method="POST">
+                  {% for valsts in valstis %}
+                  <option value="{{valsts.valsts}}">{{ valsts.valsts }}</option>
+                  {% endfor %} 
+                </select>
+                <input class="input" type="text" name="nosaukums" id="Viesnica" required>
+                <select class="input" name="zvaigznes" method="POST">
+                  <option>*</option>
+                  <option>**</option>
+                  <option>***</option>
+                  <option>****</option>
+                  <option>*****</option>
+                </select>
+                <input class="input" type="number" name="numurini" id="Numuriņu_skaits" required>
+                <input class="input" type="number" name="cena" id="Numuriņu_cena" required>
+                <input class="Pogas" style="width: 100px; height: 30px; font-size: 20px; line-height: 20px;" type="submit" value="Pievienot" required>
+            </form>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
+</body>
